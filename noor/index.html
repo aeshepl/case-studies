@@ -48,7 +48,7 @@ a{color:var(--amb)}
 /* ---------- cover ---------- */
 .cover{position:relative;background:#000}
 .cover img{width:100%}
-.cover .fade{position:absolute;inset:auto 0 0 0;height:26%;background:linear-gradient(180deg,rgba(3,4,5,0),var(--bg))}
+.cover .fade{position:absolute;inset:auto 0 0 0;height:5%;background:linear-gradient(180deg,rgba(3,4,5,0),var(--bg))}
 
 /* ---------- overview ---------- */
 .ovr{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:start}
@@ -210,6 +210,42 @@ a{color:var(--amb)}
 @media (max-width:900px){.sk{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.sk{grid-template-columns:1fr}}
 
+
+/* ---------- the sketches as small films ---------- */
+.skhead{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:clamp(24px,3vw,40px)}
+.skhead div{background:var(--bg);padding:20px 22px}
+.skhead b{display:block;font-size:clamp(24px,2.6vw,34px);font-weight:700;letter-spacing:-.02em;color:var(--ter);font-variant-numeric:tabular-nums}
+.skhead span{font-size:12.5px;color:var(--dim)}
+@media (max-width:760px){.skhead{grid-template-columns:repeat(2,1fr)}}
+.tps{display:grid;gap:clamp(16px,2vw,26px)}
+.tp{display:grid;grid-template-columns:minmax(0,.66fr) minmax(0,1fr);gap:clamp(18px,2.8vw,40px);padding:clamp(14px,1.6vw,20px);align-items:start;border-color:rgba(216,104,58,.22)}
+.tp:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,.66fr)}
+.tp:nth-child(even) .tpp{order:2}
+.tpp .zoom{border-radius:12px}
+.tpp img{aspect-ratio:2/3;object-fit:cover;border-radius:12px;box-shadow:0 30px 80px -30px rgba(216,104,58,.45)}
+.tpb{padding:clamp(4px,1vw,14px) clamp(4px,.8vw,10px)}
+.tpb h3{font-size:clamp(28px,3.4vw,46px);line-height:1.02;font-weight:700;letter-spacing:-.015em;margin:12px 0 16px}
+.tpb .claim{font-size:clamp(17px,1.6vw,21px);line-height:1.35;color:var(--ter);font-weight:400;margin:0 0 6px}
+.tpb .qq{font-size:14px;color:var(--text);margin:0 0 14px}
+.tpb .premise{font-size:13.5px;line-height:1.62;color:var(--dim);max-width:60ch;margin:0 0 20px}
+.tpst{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.tpst div{background:#07080a;padding:12px 14px}
+.tpst b{display:block;font-size:20px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tpst span{font-size:9.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.tpf{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.tpf img{aspect-ratio:16/9;object-fit:cover;border-radius:6px}
+.tpl{margin:0 0 10px}
+.tpc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{width:auto;display:flex;align-items:center;gap:10px;padding:5px 12px 5px 5px;border:1px solid rgba(255,255,255,.1)!important;border-radius:999px!important;background:rgba(255,255,255,.03)}
+.chip img{width:54px;height:36px;object-fit:cover;border-radius:999px}
+.chip span{font-size:11.5px;color:var(--text);white-space:nowrap}
+.chip:hover{border-color:var(--ter)!important}
+.tpplay{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;border:1px solid rgba(216,104,58,.6);background:rgba(216,104,58,.12);color:var(--text);font:inherit;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.tpplay span{color:var(--ter)}
+.tpplay:hover,.tpplay:focus-visible{background:rgba(216,104,58,.28);outline:none}
+@media (max-width:900px){.tp,.tp:nth-child(even){grid-template-columns:1fr}.tp:nth-child(even) .tpp{order:0}.tpp{max-width:440px}}
+@media (max-width:520px){.tpst{grid-template-columns:repeat(2,1fr)}.tpf{grid-template-columns:repeat(2,1fr)}}
+
 /* ---------- prompt to picture ---------- */
 .method{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:clamp(30px,4vw,48px)}
 .method div{padding:18px 18px 20px}
@@ -351,7 +387,7 @@ a{color:var(--amb)}
 </style></head><body>
 
 <header class="cover">
-  <img src="img/cover.jpg" alt="Key art for Noor and the Atheist Professor: Noor and Ashley in a dark conference hall, the Professor on stage, and the cartoon sketch characters bursting out of the giant screen above them." width="2400" height="1600">
+  <img src="img/cover.jpg" alt="Key art for Noor and the Atheist Professor: Noor in the foreground in warm light, the Professor behind her in cold blue, Ashley at sunrise by the sea, the conference hall on the left." width="2400" height="1600">
   <div class="fade"></div>
 </header>
 
@@ -422,7 +458,7 @@ a{color:var(--amb)}
       <video id="episode" controls playsinline preload="metadata" poster="img/poster/episode.jpg"><source src="video/episode-1.mp4" type="video/mp4"></video>
     </div>
     <div class="flagcap micro"><span><b>Episode 1</b> · 17:12 · 1080p master, streamed here at 720p</span><span>Full Duration Render 01 · 9 Dec 2025</span></div>
-    <div class="chs" id="chs"><button class="ch" data-t="0"><img loading="lazy" src="img/ch/00.jpg" alt=""><span class="t"><b>0:00</b>The hook</span></button><button class="ch" data-t="9"><img loading="lazy" src="img/ch/01.jpg" alt=""><span class="t"><b>0:09</b>Meet the Professor</span></button><button class="ch" data-t="18"><img loading="lazy" src="img/ch/02.jpg" alt=""><span class="t"><b>0:18</b>Meet Noor</span></button><button class="ch" data-t="55"><img loading="lazy" src="img/ch/03.jpg" alt=""><span class="t"><b>0:55</b>The stage</span></button><button class="ch" data-t="124.8"><img loading="lazy" src="img/ch/04.jpg" alt=""><span class="t"><b>2:04</b>The objection</span></button><button class="ch" data-t="151.5"><img loading="lazy" src="img/ch/05.jpg" alt=""><span class="t"><b>2:31</b>The camera</span></button><button class="ch toon" data-t="246"><img loading="lazy" src="img/ch/06.jpg" alt=""><span class="t"><b>4:06</b>Sketch 1 · No Smoking</span></button><button class="ch toon" data-t="285"><img loading="lazy" src="img/ch/07.jpg" alt=""><span class="t"><b>4:45</b>Sketch 2 · The recipe book</span></button><button class="ch" data-t="307"><img loading="lazy" src="img/ch/08.jpg" alt=""><span class="t"><b>5:07</b>The debate returns</span></button><button class="ch toon" data-t="348"><img loading="lazy" src="img/ch/09.jpg" alt=""><span class="t"><b>5:48</b>Sketch 3 · Ignorant atoms</span></button><button class="ch toon" data-t="396"><img loading="lazy" src="img/ch/10.jpg" alt=""><span class="t"><b>6:36</b>Sketch 4 · The blind painter</span></button><button class="ch toon" data-t="453"><img loading="lazy" src="img/ch/11.jpg" alt=""><span class="t"><b>7:33</b>Sketch 5 · Running nature</span></button><button class="ch toon" data-t="500"><img loading="lazy" src="img/ch/12.jpg" alt=""><span class="t"><b>8:20</b>Sketch 6 · Science tomorrow</span></button><button class="ch" data-t="580"><img loading="lazy" src="img/ch/13.jpg" alt=""><span class="t"><b>9:40</b>The last word</span></button><button class="ch" data-t="716"><img loading="lazy" src="img/ch/14.jpg" alt=""><span class="t"><b>11:56</b>The café</span></button><button class="ch" data-t="855"><img loading="lazy" src="img/ch/15.jpg" alt=""><span class="t"><b>14:15</b>Ashley’s home</span></button><button class="ch" data-t="932"><img loading="lazy" src="img/ch/16.jpg" alt=""><span class="t"><b>15:32</b>Night, then morning</span></button><button class="ch" data-t="1010"><img loading="lazy" src="img/ch/17.jpg" alt=""><span class="t"><b>16:50</b>The beach</span></button></div>
+    <div class="chs" id="chs"><button class="ch" data-t="0"><img loading="lazy" src="img/ch/00.jpg" alt=""><span class="t"><b>0:00</b>The hook</span></button><button class="ch" data-t="9"><img loading="lazy" src="img/ch/01.jpg" alt=""><span class="t"><b>0:09</b>Meet the Professor</span></button><button class="ch" data-t="18"><img loading="lazy" src="img/ch/02.jpg" alt=""><span class="t"><b>0:18</b>Meet Noor</span></button><button class="ch" data-t="55"><img loading="lazy" src="img/ch/03.jpg" alt=""><span class="t"><b>0:55</b>The stage</span></button><button class="ch" data-t="124.8"><img loading="lazy" src="img/ch/04.jpg" alt=""><span class="t"><b>2:04</b>The objection</span></button><button class="ch" data-t="151.5"><img loading="lazy" src="img/ch/05.jpg" alt=""><span class="t"><b>2:31</b>The camera</span></button><button class="ch toon" data-t="244"><img loading="lazy" src="img/ch/06.jpg" alt=""><span class="t"><b>4:04</b>Sketch 1 · No Smoking</span></button><button class="ch toon" data-t="283"><img loading="lazy" src="img/ch/07.jpg" alt=""><span class="t"><b>4:43</b>Sketch 2 · The recipe book</span></button><button class="ch" data-t="307"><img loading="lazy" src="img/ch/08.jpg" alt=""><span class="t"><b>5:07</b>The debate returns</span></button><button class="ch toon" data-t="349"><img loading="lazy" src="img/ch/09.jpg" alt=""><span class="t"><b>5:49</b>Sketch 3 · The crossing</span></button><button class="ch toon" data-t="397"><img loading="lazy" src="img/ch/10.jpg" alt=""><span class="t"><b>6:37</b>Sketch 4 · The blind painter</span></button><button class="ch toon" data-t="451"><img loading="lazy" src="img/ch/11.jpg" alt=""><span class="t"><b>7:31</b>Sketch 5 · Lights out</span></button><button class="ch toon" data-t="507"><img loading="lazy" src="img/ch/12.jpg" alt=""><span class="t"><b>8:27</b>Sketch 6 · The chemistry class</span></button><button class="ch" data-t="580"><img loading="lazy" src="img/ch/13.jpg" alt=""><span class="t"><b>9:40</b>The last word</span></button><button class="ch" data-t="716"><img loading="lazy" src="img/ch/14.jpg" alt=""><span class="t"><b>11:56</b>The café</span></button><button class="ch" data-t="855"><img loading="lazy" src="img/ch/15.jpg" alt=""><span class="t"><b>14:15</b>Ashley’s home</span></button><button class="ch" data-t="932"><img loading="lazy" src="img/ch/16.jpg" alt=""><span class="t"><b>15:32</b>Night, then morning</span></button><button class="ch" data-t="1010"><img loading="lazy" src="img/ch/17.jpg" alt=""><span class="t"><b>16:50</b>The beach</span></button></div>
   </div>
 </section>
 
@@ -526,7 +562,7 @@ a{color:var(--amb)}
   <div class="z">
     <div class="sh">
       <div><p class="lbl"><svg class="ico" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,40V76a8,8,0,0,1-16,0V48H180a8,8,0,0,1,0-16h36A8,8,0,0,1,224,40Zm-8,132a8,8,0,0,0-8,8v28H180a8,8,0,0,0,0,16h36a8,8,0,0,0,8-8V180A8,8,0,0,0,216,172ZM76,208H48V180a8,8,0,0,0-16,0v36a8,8,0,0,0,8,8H76a8,8,0,0,0,0-16ZM40,84a8,8,0,0,0,8-8V48H76a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8V76A8,8,0,0,0,40,84Zm61,57.51A67.94,67.94,0,0,0,73.6,163.19,8,8,0,0,0,80,176h96a8,8,0,0,0,6.4-12.81A67.94,67.94,0,0,0,155,141.51a40,40,0,1,0-53.94,0Z"/></svg> The cast · 18 characters</p><h2>Every face,<br>on a sheet</h2></div>
-      <p>Noor and the Professor were designed on day one — ChatGPT for the first portrait, Nano Banana for the angles — and never drifted. For this case study I drew up a model sheet for every one of the eighteen characters, straight from the film’s frames, so you can see what had to stay identical across 386 clips.</p>
+      <p>Noor and the Professor were designed on day one — ChatGPT for the first portrait, Nano Banana for the angles — and never drifted. For this case study I drew up a model sheet for every character — twenty sheets, extras included — straight from the film’s frames, so you can see what had to stay identical across 386 clips.</p>
     </div>
     <div class="origin">
       <figure><button class="zoom" data-i="img/design/noor-sep9-chatgpt.jpg" aria-label="Noor, first design"><img loading="lazy" src="img/design/noor-sep9-chatgpt.jpg" alt="Noor's first design, full body, painterly."></button><figcaption class="micro"><b>Noor</b> · 9 Sep · ChatGPT</figcaption></figure>
@@ -539,8 +575,8 @@ a{color:var(--amb)}
     <div class="grp"><h3>The leads</h3><span class="micro">Sheets made for this case study · from the film’s frames</span></div>
     <div class="cast lead"><figure><button class="zoom" data-i="img/sheets/noor.jpg" aria-label="Character sheet: Noor Yasmin"><img loading="lazy" src="img/sheets/t/noor.jpg" alt="Character sheet for Noor Yasmin: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>Noor Yasmin</b><span>Lead</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/professor.jpg" aria-label="Character sheet: Prof. Jeff Carthy"><img loading="lazy" src="img/sheets/t/professor.jpg" alt="Character sheet for Prof. Jeff Carthy: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>Prof. Jeff Carthy</b><span>Lead</span></figcaption></figure></div>
     <div class="cast lead" style="margin-top:clamp(10px,1.4vw,16px)"><figure><button class="zoom" data-i="img/sheets/ashley.jpg" aria-label="Character sheet: Ashley"><img loading="lazy" src="img/sheets/t/ashley.jpg" alt="Character sheet for Ashley: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>Ashley</b><span>Lead</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/team.jpg" aria-label="Character sheet: The AI team"><img loading="lazy" src="img/sheets/t/team.jpg" alt="Character sheet for The AI team: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The AI team</b><span>The Professor’s engineers</span></figcaption></figure></div>
-    <div class="grp"><h3>The sketches · 3D cartoon</h3><span class="micro">Fourteen characters across six sketches, plus a few street extras</span></div>
-    <div class="cast"><figure><button class="zoom" data-i="img/sheets/sign.jpg" aria-label="Character sheet: The No Smoking sign"><img loading="lazy" src="img/sheets/t/sign.jpg" alt="Character sheet for The No Smoking sign: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The No Smoking sign</b><span>Sketch 1</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/smoker.jpg" aria-label="Character sheet: The Smoker"><img loading="lazy" src="img/sheets/t/smoker.jpg" alt="Character sheet for The Smoker: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Smoker</b><span>Sketch 1</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/bystander.jpg" aria-label="Character sheet: The Bystander"><img loading="lazy" src="img/sheets/t/bystander.jpg" alt="Character sheet for The Bystander: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Bystander</b><span>Sketch 1</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/recipebook.jpg" aria-label="Character sheet: The Recipe Book"><img loading="lazy" src="img/sheets/t/recipebook.jpg" alt="Character sheet for The Recipe Book: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Recipe Book</b><span>Sketch 2</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/trafficlight.jpg" aria-label="Character sheet: The Traffic Light"><img loading="lazy" src="img/sheets/t/trafficlight.jpg" alt="Character sheet for The Traffic Light: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Traffic Light</b><span>Sketches 3 & 5</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/tallman.jpg" aria-label="Character sheet: The Tall Pedestrian"><img loading="lazy" src="img/sheets/t/tallman.jpg" alt="Character sheet for The Tall Pedestrian: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Tall Pedestrian</b><span>Sketch 3</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/baldman.jpg" aria-label="Character sheet: The Bald Pedestrian"><img loading="lazy" src="img/sheets/t/baldman.jpg" alt="Character sheet for The Bald Pedestrian: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Bald Pedestrian</b><span>Sketch 3</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/shortguy.jpg" aria-label="Character sheet: The Short Guy"><img loading="lazy" src="img/sheets/t/shortguy.jpg" alt="Character sheet for The Short Guy: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Short Guy</b><span>Sketch 3</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/painter.jpg" aria-label="Character sheet: The Blind Painter"><img loading="lazy" src="img/sheets/t/painter.jpg" alt="Character sheet for The Blind Painter: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Blind Painter</b><span>Sketch 4</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/taxidriver.jpg" aria-label="Character sheet: The Taxi Driver"><img loading="lazy" src="img/sheets/t/taxidriver.jpg" alt="Character sheet for The Taxi Driver: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Taxi Driver</b><span>Sketch 4</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/onlooker.jpg" aria-label="Character sheet: The Onlooker"><img loading="lazy" src="img/sheets/t/onlooker.jpg" alt="Character sheet for The Onlooker: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Onlooker</b><span>Sketch 4</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/teacher.jpg" aria-label="Character sheet: The Chemistry Teacher"><img loading="lazy" src="img/sheets/t/teacher.jpg" alt="Character sheet for The Chemistry Teacher: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Chemistry Teacher</b><span>Sketch 6</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/student.jpg" aria-label="Character sheet: The Student"><img loading="lazy" src="img/sheets/t/student.jpg" alt="Character sheet for The Student: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Student</b><span>Sketch 6</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/chicken.jpg" aria-label="Character sheet: The Chicken"><img loading="lazy" src="img/sheets/t/chicken.jpg" alt="Character sheet for The Chicken: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Chicken</b><span>Sketch 6</span></figcaption></figure></div>
+    <div class="grp"><h3>The sketches · 3D cartoon</h3><span class="micro">Fourteen characters across six sketches, plus two sheets of street extras</span></div>
+    <div class="cast"><figure><button class="zoom" data-i="img/sheets/sign.jpg" aria-label="Character sheet: The No Smoking sign"><img loading="lazy" src="img/sheets/t/sign.jpg" alt="Character sheet for The No Smoking sign: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The No Smoking sign</b><span>Sketch 1</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/smoker.jpg" aria-label="Character sheet: The Smoker"><img loading="lazy" src="img/sheets/t/smoker.jpg" alt="Character sheet for The Smoker: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Smoker</b><span>Sketch 1</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/bystander.jpg" aria-label="Character sheet: The Bystander"><img loading="lazy" src="img/sheets/t/bystander.jpg" alt="Character sheet for The Bystander: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Bystander</b><span>Sketch 1</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/recipebook.jpg" aria-label="Character sheet: The Recipe Book"><img loading="lazy" src="img/sheets/t/recipebook.jpg" alt="Character sheet for The Recipe Book: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Recipe Book</b><span>Sketch 2</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/trafficlight.jpg" aria-label="Character sheet: The Traffic Light"><img loading="lazy" src="img/sheets/t/trafficlight.jpg" alt="Character sheet for The Traffic Light: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Traffic Light</b><span>Sketches 3 & 5</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/crossing.jpg" aria-label="Character sheet: The Crossing"><img loading="lazy" src="img/sheets/t/crossing.jpg" alt="Character sheet for The Crossing: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Crossing</b><span>Sketch 3 · all five</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/tallman.jpg" aria-label="Character sheet: The Tall Pedestrian"><img loading="lazy" src="img/sheets/t/tallman.jpg" alt="Character sheet for The Tall Pedestrian: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Tall Pedestrian</b><span>Sketch 3</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/baldman.jpg" aria-label="Character sheet: The Bald Pedestrian"><img loading="lazy" src="img/sheets/t/baldman.jpg" alt="Character sheet for The Bald Pedestrian: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Bald Pedestrian</b><span>Sketch 3</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/shortguy.jpg" aria-label="Character sheet: The Short Guy"><img loading="lazy" src="img/sheets/t/shortguy.jpg" alt="Character sheet for The Short Guy: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Short Guy</b><span>Sketch 3</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/painter.jpg" aria-label="Character sheet: The Blind Painter"><img loading="lazy" src="img/sheets/t/painter.jpg" alt="Character sheet for The Blind Painter: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Blind Painter</b><span>Sketch 4</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/taxidriver.jpg" aria-label="Character sheet: The Taxi Driver"><img loading="lazy" src="img/sheets/t/taxidriver.jpg" alt="Character sheet for The Taxi Driver: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Taxi Driver</b><span>Sketch 4</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/onlooker.jpg" aria-label="Character sheet: The Onlooker"><img loading="lazy" src="img/sheets/t/onlooker.jpg" alt="Character sheet for The Onlooker: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Onlooker</b><span>Sketch 4</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/street.jpg" aria-label="Character sheet: The Street"><img loading="lazy" src="img/sheets/t/street.jpg" alt="Character sheet for The Street: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Street</b><span>Sketch 5 · extras</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/teacher.jpg" aria-label="Character sheet: The Chemistry Teacher"><img loading="lazy" src="img/sheets/t/teacher.jpg" alt="Character sheet for The Chemistry Teacher: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Chemistry Teacher</b><span>Sketch 6</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/student.jpg" aria-label="Character sheet: The Student"><img loading="lazy" src="img/sheets/t/student.jpg" alt="Character sheet for The Student: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Student</b><span>Sketch 6</span></figcaption></figure><figure><button class="zoom" data-i="img/sheets/chicken.jpg" aria-label="Character sheet: The Chicken"><img loading="lazy" src="img/sheets/t/chicken.jpg" alt="Character sheet for The Chicken: turnaround, expressions and colour palette."></button><figcaption class="micro"><b>The Chicken</b><span>Sketch 6</span></figcaption></figure></div>
   </div>
 </section>
 
@@ -573,19 +609,119 @@ a{color:var(--amb)}
 <section class="wrap">
   <div class="sh">
     <div><p class="lbl"><svg class="ico" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M217,34.8a15.94,15.94,0,0,0-14.82-1.71C188.15,38.55,159.82,47.71,128,47.71S67.84,38.55,53.79,33.09A16,16,0,0,0,32,48v55.77c0,35.84,9.65,69.65,27.18,95.18,18.16,26.46,42.6,41,68.82,41s50.66-14.57,68.82-41C214.35,173.44,224,139.63,224,103.79V48A16,16,0,0,0,217,34.8ZM78,133.33A8,8,0,1,1,66,122.66C71.75,116.28,82.18,112,92,112s20.25,4.28,26,10.66A8,8,0,1,1,106,133.33c-2.68-3-8.85-5.33-14-5.33S80.64,130.34,78,133.33Zm90.49,47.86a52.9,52.9,0,0,1-80.9,0A8,8,0,1,1,99.72,170.8a36.89,36.89,0,0,0,56.56,0,8,8,0,0,1,12.17,10.39ZM189.34,134a8,8,0,0,1-11.3-.63c-2.68-3-8.85-5.33-14-5.33s-11.36,2.34-14,5.33A8,8,0,1,1,138,122.66c5.71-6.38,16.14-10.66,26-10.66s20.25,4.28,26,10.66A8,8,0,0,1,189.34,134Z"/></svg> Two worlds</p><h2>A drama,<br>and six cartoons inside it</h2></div>
-    <p>The script breaks its own seriousness six times with a sketch. Each one needed its own cast, its own set and a completely different render style — then had to hand back to the drama without a jolt. A title card opens every sketch and a nasheed carries the switch.</p>
+    <p>The script breaks its own seriousness six times with a sketch. Each one needed its own cast, its own set and a completely different render style — then had to hand back to the drama without a jolt. A title card opens every sketch and a nasheed carries the switch. <a href="#sketches" style="text-decoration:none;font-weight:500">Meet the six sketches &darr;</a></p>
   </div>
   <div class="worlds">
-    <div class="world glass"><p class="micro"><b>World one</b> · the drama</p><h3>Painterly realism</h3><p>Stylised, cinematic, lit blue against amber. Three leads carrying nearly thirteen minutes of lip-synced dialogue.</p><div class="pics"><img loading="lazy" src="img/stills/t/noor-close.jpg" alt="Noor, close-up."><img loading="lazy" src="img/stills/t/prof-close.jpg" alt="The Professor, close-up."></div></div>
-    <div class="world glass toon"><p class="micro"><b>World two</b> · the sketches</p><h3>3D cartoon</h3><p>Big shapes, loud colour, physical comedy. Fourteen characters in about four and a half minutes.</p><div class="pics"><img loading="lazy" src="img/stills/t/sk-nosmoking.jpg" alt="The No Smoking sign sketch."><img loading="lazy" src="img/stills/t/sk-teacher.jpg" alt="The chemistry teacher sketch."></div></div>
+    <div class="world glass"><p class="micro"><b>World one</b> · the drama</p><h3>Painterly realism</h3><p>Stylised, cinematic, lit blue against amber. Three leads carrying about twelve minutes of lip-synced dialogue.</p><div class="pics"><img loading="lazy" src="img/stills/t/noor-close.jpg" alt="Noor, close-up."><img loading="lazy" src="img/stills/t/prof-close.jpg" alt="The Professor, close-up."></div></div>
+    <div class="world glass toon"><p class="micro"><b>World two</b> · the sketches</p><h3>3D cartoon</h3><p>Big shapes, loud colour, physical comedy. Fourteen characters and their extras in 4 minutes 52 seconds.</p><div class="pics"><img loading="lazy" src="img/stills/t/sk-nosmoking.jpg" alt="The No Smoking sign sketch."><img loading="lazy" src="img/stills/t/sk-teacher.jpg" alt="The chemistry teacher sketch."></div></div>
   </div>
-  <div class="sk">
-    <div class="skc glass"><img loading="lazy" src="img/stills/t/sk-nosmoking.jpg" alt="Sketch 1."><div class="n micro"><span><b>Sketch 1</b></span><span>4:06</span></div><h4>“The laws of the universe make things happen.”</h4><p>A No Smoking sign that thinks it’s the reason nobody smokes.</p></div>
-    <div class="skc glass"><img loading="lazy" src="img/stills/t/sk-recipe.jpg" alt="Sketch 2."><div class="n micro"><span><b>Sketch 2</b></span><span>4:45</span></div><h4>“Will-less atoms can produce acts of will!”</h4><p>A recipe book waiting for a cake to bake itself.</p></div>
-    <div class="skc glass"><img loading="lazy" src="img/stills/t/sk-crossing.jpg" alt="Sketch 3: five pedestrians waiting at a crossing under the traffic light."><div class="n micro"><span><b>Sketch 3</b></span><span>5:51</span></div><h4>“Ignorant atoms can pull off amazing things!”</h4><p>Five people at a crossing, and one who doesn’t know the rule.</p></div>
-    <div class="skc glass"><img loading="lazy" src="img/stills/t/sk-painter.jpg" alt="Sketch 4: the blind painter in a spotlight."><div class="n micro"><span><b>Sketch 4</b></span><span>6:39</span></div><h4>“Blind atoms can build a colourful universe.”</h4><p>Can a blind man really be a painter? A taxi finds out.</p></div>
-    <div class="skc glass"><img loading="lazy" src="img/stills/t/card-atoms.jpg" alt="Sketch 5 title card."><div class="n micro"><span><b>Sketch 5</b></span><span>7:36</span></div><h4>“Atoms are the ones running nature.”</h4><p>The traffic light returns — and so does the street.</p></div>
-    <div class="skc glass"><img loading="lazy" src="img/stills/t/sk-chicken.jpg" alt="Sketch 6."><div class="n micro"><span><b>Sketch 6</b></span><span>8:30</span></div><h4>“Science will explain tomorrow what it can’t explain today!”</h4><p>A chemistry class, a promise, and a chicken at the door.</p></div>
+</section>
+
+
+<section class="wrap" id="sketches">
+  <div class="glow warm" style="width:900px;height:640px;left:50%;top:120px;transform:translateX(-50%)"></div>
+  <div class="ghost" style="top:clamp(24px,4vw,64px);font-size:clamp(60px,12vw,186px)">Sketches</div>
+  <div class="z">
+    <div class="sh">
+      <div><p class="lbl"><svg class="ico" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M217,34.8a15.94,15.94,0,0,0-14.82-1.71C188.15,38.55,159.82,47.71,128,47.71S67.84,38.55,53.79,33.09A16,16,0,0,0,32,48v55.77c0,35.84,9.65,69.65,27.18,95.18,18.16,26.46,42.6,41,68.82,41s50.66-14.57,68.82-41C214.35,173.44,224,139.63,224,103.79V48A16,16,0,0,0,217,34.8ZM78,133.33A8,8,0,1,1,66,122.66C71.75,116.28,82.18,112,92,112s20.25,4.28,26,10.66A8,8,0,1,1,106,133.33c-2.68-3-8.85-5.33-14-5.33S80.64,130.34,78,133.33Zm90.49,47.86a52.9,52.9,0,0,1-80.9,0A8,8,0,1,1,99.72,170.8a36.89,36.89,0,0,0,56.56,0,8,8,0,0,1,12.17,10.39ZM189.34,134a8,8,0,0,1-11.3-.63c-2.68-3-8.85-5.33-14-5.33s-11.36,2.34-14,5.33A8,8,0,1,1,138,122.66c5.71-6.38,16.14-10.66,26-10.66s20.25,4.28,26,10.66A8,8,0,0,1,189.34,134Z"/></svg> The sketches · six small films</p><h2>Six sketches,<br>six small films</h2></div>
+      <p>Each sketch stands on its own — its own premise, cast, set and comic timing — in a 3D cartoon world nothing like the drama around it, then hands back to the debate without a jolt. The client wrote the jokes; I designed, animated and cut every one. The posters were made for this case study from each sketch’s own frames and characters.</p>
+    </div>
+    <div class="skhead">
+      <div><b>6</b><span>sketches, each opened by its own title card</span></div>
+      <div><b>4:52</b><span>of 3D animation inside the episode</span></div>
+      <div><b>50</b><span>shots across the six</span></div>
+      <div><b>14</b><span>characters, plus the street extras</span></div>
+    </div>
+    <div class="tps"><article class="tp glass" id="sketch-1">
+  <div class="tpp"><button class="zoom" data-i="img/sketches/poster-1.jpg" aria-label="Poster: The No Smoking Sign"><img loading="lazy" src="img/sketches/t/poster-1.jpg" alt="Poster for sketch 1, The No Smoking Sign."></button></div>
+  <div class="tpb">
+    <p class="micro"><b>Sketch 01</b> · 4:04 – 4:40 in the episode</p>
+    <h3>The No Smoking Sign</h3>
+    <p class="claim">“The laws of the universe make things happen.”</p>
+    <p class="qq">Does a “No Smoking” sign actually stop people from smoking?</p>
+    <p class="premise">A No Smoking sign that believes it’s the reason nobody smokes — and a smoker hiding his last cigarette in his sock while it lectures the street.</p>
+    <div class="tpst"><div><b>0:36</b><span>runtime</span></div><div><b>8</b><span>shots</span></div><div><b>3</b><span>characters</span></div><div><b>1</b><span>title card</span></div></div>
+    <div class="tpf"><button class="zoom" data-i="img/sketches/f/s1-0.jpg" aria-label="The No Smoking Sign, frame 1"><img loading="lazy" src="img/sketches/t/s1-0.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s1-1.jpg" aria-label="The No Smoking Sign, frame 2"><img loading="lazy" src="img/sketches/t/s1-1.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s1-2.jpg" aria-label="The No Smoking Sign, frame 3"><img loading="lazy" src="img/sketches/t/s1-2.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s1-3.jpg" aria-label="The No Smoking Sign, frame 4"><img loading="lazy" src="img/sketches/t/s1-3.jpg" alt=""></button></div>
+    <p class="micro tpl"><b>Cast</b> · character sheets</p>
+    <div class="tpc"><button class="zoom chip" data-i="img/sheets/sign.jpg" aria-label="Character sheet: The No Smoking sign"><img loading="lazy" src="img/sheets/t/sign.jpg" alt=""><span>The No Smoking sign</span></button><button class="zoom chip" data-i="img/sheets/smoker.jpg" aria-label="Character sheet: The Smoker"><img loading="lazy" src="img/sheets/t/smoker.jpg" alt=""><span>The Smoker</span></button><button class="zoom chip" data-i="img/sheets/bystander.jpg" aria-label="Character sheet: The Bystander"><img loading="lazy" src="img/sheets/t/bystander.jpg" alt=""><span>The Bystander</span></button></div>
+    <button class="tpplay" data-t="244"><span>&#9654;</span> Watch sketch 01 · 0:36</button>
+  </div>
+</article>
+<article class="tp glass" id="sketch-2">
+  <div class="tpp"><button class="zoom" data-i="img/sketches/poster-2.jpg" aria-label="Poster: The Recipe Book"><img loading="lazy" src="img/sketches/t/poster-2.jpg" alt="Poster for sketch 2, The Recipe Book."></button></div>
+  <div class="tpb">
+    <p class="micro"><b>Sketch 02</b> · 4:43 – 5:09 in the episode</p>
+    <h3>The Recipe Book</h3>
+    <p class="claim">“Will-less atoms can produce acts of will!”</p>
+    <p class="qq">Can eggs, flour and sugar really bake a cake all by themselves?</p>
+    <p class="premise">A recipe book drills eggs, flour and sugar like a sergeant, and waits for the cake to bake itself. The flour turns up late.</p>
+    <div class="tpst"><div><b>0:26</b><span>runtime</span></div><div><b>5</b><span>shots</span></div><div><b>1 + crew</b><span>characters</span></div><div><b>1</b><span>title card</span></div></div>
+    <div class="tpf"><button class="zoom" data-i="img/sketches/f/s2-0.jpg" aria-label="The Recipe Book, frame 1"><img loading="lazy" src="img/sketches/t/s2-0.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s2-1.jpg" aria-label="The Recipe Book, frame 2"><img loading="lazy" src="img/sketches/t/s2-1.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s2-2.jpg" aria-label="The Recipe Book, frame 3"><img loading="lazy" src="img/sketches/t/s2-2.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s2-3.jpg" aria-label="The Recipe Book, frame 4"><img loading="lazy" src="img/sketches/t/s2-3.jpg" alt=""></button></div>
+    <p class="micro tpl"><b>Cast</b> · character sheets</p>
+    <div class="tpc"><button class="zoom chip" data-i="img/sheets/recipebook.jpg" aria-label="Character sheet: The Recipe Book"><img loading="lazy" src="img/sheets/t/recipebook.jpg" alt=""><span>The Recipe Book</span></button></div>
+    <button class="tpplay" data-t="283"><span>&#9654;</span> Watch sketch 02 · 0:26</button>
+  </div>
+</article>
+<article class="tp glass" id="sketch-3">
+  <div class="tpp"><button class="zoom" data-i="img/sketches/poster-3.jpg" aria-label="Poster: The Crossing"><img loading="lazy" src="img/sketches/t/poster-3.jpg" alt="Poster for sketch 3, The Crossing."></button></div>
+  <div class="tpb">
+    <p class="micro"><b>Sketch 03</b> · 5:49 – 6:37 in the episode</p>
+    <h3>The Crossing</h3>
+    <p class="claim">“Ignorant atoms can pull off amazing things!”</p>
+    <p class="qq">Can people who don’t even know the rules really create order?</p>
+    <p class="premise">Five pedestrians, one shouting traffic light, and one man who thinks you cross on red — until the big man points at the stars.</p>
+    <div class="tpst"><div><b>0:48</b><span>runtime</span></div><div><b>11</b><span>shots</span></div><div><b>6</b><span>characters</span></div><div><b>1</b><span>title card</span></div></div>
+    <div class="tpf"><button class="zoom" data-i="img/sketches/f/s3-0.jpg" aria-label="The Crossing, frame 1"><img loading="lazy" src="img/sketches/t/s3-0.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s3-1.jpg" aria-label="The Crossing, frame 2"><img loading="lazy" src="img/sketches/t/s3-1.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s3-2.jpg" aria-label="The Crossing, frame 3"><img loading="lazy" src="img/sketches/t/s3-2.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s3-3.jpg" aria-label="The Crossing, frame 4"><img loading="lazy" src="img/sketches/t/s3-3.jpg" alt=""></button></div>
+    <p class="micro tpl"><b>Cast</b> · character sheets</p>
+    <div class="tpc"><button class="zoom chip" data-i="img/sheets/trafficlight.jpg" aria-label="Character sheet: The Traffic Light"><img loading="lazy" src="img/sheets/t/trafficlight.jpg" alt=""><span>The Traffic Light</span></button><button class="zoom chip" data-i="img/sheets/crossing.jpg" aria-label="Character sheet: The Crossing"><img loading="lazy" src="img/sheets/t/crossing.jpg" alt=""><span>The Crossing</span></button><button class="zoom chip" data-i="img/sheets/tallman.jpg" aria-label="Character sheet: The Tall Pedestrian"><img loading="lazy" src="img/sheets/t/tallman.jpg" alt=""><span>The Tall Pedestrian</span></button><button class="zoom chip" data-i="img/sheets/baldman.jpg" aria-label="Character sheet: The Bald Pedestrian"><img loading="lazy" src="img/sheets/t/baldman.jpg" alt=""><span>The Bald Pedestrian</span></button><button class="zoom chip" data-i="img/sheets/shortguy.jpg" aria-label="Character sheet: The Short Guy"><img loading="lazy" src="img/sheets/t/shortguy.jpg" alt=""><span>The Short Guy</span></button></div>
+    <button class="tpplay" data-t="349"><span>&#9654;</span> Watch sketch 03 · 0:48</button>
+  </div>
+</article>
+<article class="tp glass" id="sketch-4">
+  <div class="tpp"><button class="zoom" data-i="img/sketches/poster-4.jpg" aria-label="Poster: The Blind Painter"><img loading="lazy" src="img/sketches/t/poster-4.jpg" alt="Poster for sketch 4, The Blind Painter."></button></div>
+  <div class="tpb">
+    <p class="micro"><b>Sketch 04</b> · 6:37 – 7:31 in the episode</p>
+    <h3>The Blind Painter</h3>
+    <p class="claim">“Blind atoms can build a colourful universe.”</p>
+    <p class="qq">But can a blind person really be a painter?</p>
+    <p class="premise">A blind man flings his cane onto a passing taxi, breakdances with spray cans and paints himself as a superhero. VISION!</p>
+    <div class="tpst"><div><b>0:54</b><span>runtime</span></div><div><b>9</b><span>shots</span></div><div><b>4</b><span>characters</span></div><div><b>1</b><span>title card</span></div></div>
+    <div class="tpf"><button class="zoom" data-i="img/sketches/f/s4-0.jpg" aria-label="The Blind Painter, frame 1"><img loading="lazy" src="img/sketches/t/s4-0.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s4-1.jpg" aria-label="The Blind Painter, frame 2"><img loading="lazy" src="img/sketches/t/s4-1.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s4-2.jpg" aria-label="The Blind Painter, frame 3"><img loading="lazy" src="img/sketches/t/s4-2.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s4-3.jpg" aria-label="The Blind Painter, frame 4"><img loading="lazy" src="img/sketches/t/s4-3.jpg" alt=""></button></div>
+    <p class="micro tpl"><b>Cast</b> · character sheets</p>
+    <div class="tpc"><button class="zoom chip" data-i="img/sheets/painter.jpg" aria-label="Character sheet: The Blind Painter"><img loading="lazy" src="img/sheets/t/painter.jpg" alt=""><span>The Blind Painter</span></button><button class="zoom chip" data-i="img/sheets/taxidriver.jpg" aria-label="Character sheet: The Taxi Driver"><img loading="lazy" src="img/sheets/t/taxidriver.jpg" alt=""><span>The Taxi Driver</span></button><button class="zoom chip" data-i="img/sheets/onlooker.jpg" aria-label="Character sheet: The Onlooker"><img loading="lazy" src="img/sheets/t/onlooker.jpg" alt=""><span>The Onlooker</span></button><button class="zoom chip" data-i="img/sheets/trafficlight.jpg" aria-label="Character sheet: The Traffic Light"><img loading="lazy" src="img/sheets/t/trafficlight.jpg" alt=""><span>The Traffic Light</span></button></div>
+    <button class="tpplay" data-t="397"><span>&#9654;</span> Watch sketch 04 · 0:54</button>
+  </div>
+</article>
+<article class="tp glass" id="sketch-5">
+  <div class="tpp"><button class="zoom" data-i="img/sketches/poster-5.jpg" aria-label="Poster: Lights Out"><img loading="lazy" src="img/sketches/t/poster-5.jpg" alt="Poster for sketch 5, Lights Out."></button></div>
+  <div class="tpb">
+    <p class="micro"><b>Sketch 05</b> · 7:31 – 8:23 in the episode</p>
+    <h3>Lights Out</h3>
+    <p class="claim">“Atoms are the ones running nature.”</p>
+    <p class="qq">Can lifeless, mindless things really cause conscious actions?</p>
+    <p class="premise">The light turns green and four of them cross. The fifth lies still under a newspaper — his lights went out a long time ago.</p>
+    <div class="tpst"><div><b>0:52</b><span>runtime</span></div><div><b>9</b><span>shots</span></div><div><b>6</b><span>characters</span></div><div><b>1</b><span>title card</span></div></div>
+    <div class="tpf"><button class="zoom" data-i="img/sketches/f/s5-0.jpg" aria-label="Lights Out, frame 1"><img loading="lazy" src="img/sketches/t/s5-0.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s5-1.jpg" aria-label="Lights Out, frame 2"><img loading="lazy" src="img/sketches/t/s5-1.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s5-2.jpg" aria-label="Lights Out, frame 3"><img loading="lazy" src="img/sketches/t/s5-2.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s5-3.jpg" aria-label="Lights Out, frame 4"><img loading="lazy" src="img/sketches/t/s5-3.jpg" alt=""></button></div>
+    <p class="micro tpl"><b>Cast</b> · character sheets</p>
+    <div class="tpc"><button class="zoom chip" data-i="img/sheets/trafficlight.jpg" aria-label="Character sheet: The Traffic Light"><img loading="lazy" src="img/sheets/t/trafficlight.jpg" alt=""><span>The Traffic Light</span></button><button class="zoom chip" data-i="img/sheets/street.jpg" aria-label="Character sheet: The Street"><img loading="lazy" src="img/sheets/t/street.jpg" alt=""><span>The Street</span></button><button class="zoom chip" data-i="img/sheets/crossing.jpg" aria-label="Character sheet: The Crossing"><img loading="lazy" src="img/sheets/t/crossing.jpg" alt=""><span>The Crossing</span></button></div>
+    <button class="tpplay" data-t="451"><span>&#9654;</span> Watch sketch 05 · 0:52</button>
+  </div>
+</article>
+<article class="tp glass" id="sketch-6">
+  <div class="tpp"><button class="zoom" data-i="img/sketches/poster-6.jpg" aria-label="Poster: The Chemistry Class"><img loading="lazy" src="img/sketches/t/poster-6.jpg" alt="Poster for sketch 6, The Chemistry Class."></button></div>
+  <div class="tpb">
+    <p class="micro"><b>Sketch 06</b> · 8:27 – 9:43 in the episode</p>
+    <h3>The Chemistry Class</h3>
+    <p class="claim">“Science will explain tomorrow what it can’t explain today!”</p>
+    <p class="qq">A promise, a chalkboard and a chicken at the door.</p>
+    <p class="premise">Hydrogen and oxygen always make water, the teacher says. So what about the chicken that always follows the boy in green through the door?</p>
+    <div class="tpst"><div><b>1:16</b><span>runtime</span></div><div><b>8</b><span>shots</span></div><div><b>3 + 2</b><span>characters</span></div><div><b>1</b><span>title card</span></div></div>
+    <div class="tpf"><button class="zoom" data-i="img/sketches/f/s6-0.jpg" aria-label="The Chemistry Class, frame 1"><img loading="lazy" src="img/sketches/t/s6-0.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s6-1.jpg" aria-label="The Chemistry Class, frame 2"><img loading="lazy" src="img/sketches/t/s6-1.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s6-2.jpg" aria-label="The Chemistry Class, frame 3"><img loading="lazy" src="img/sketches/t/s6-2.jpg" alt=""></button><button class="zoom" data-i="img/sketches/f/s6-3.jpg" aria-label="The Chemistry Class, frame 4"><img loading="lazy" src="img/sketches/t/s6-3.jpg" alt=""></button></div>
+    <p class="micro tpl"><b>Cast</b> · character sheets</p>
+    <div class="tpc"><button class="zoom chip" data-i="img/sheets/teacher.jpg" aria-label="Character sheet: The Chemistry Teacher"><img loading="lazy" src="img/sheets/t/teacher.jpg" alt=""><span>The Chemistry Teacher</span></button><button class="zoom chip" data-i="img/sheets/student.jpg" aria-label="Character sheet: The Student"><img loading="lazy" src="img/sheets/t/student.jpg" alt=""><span>The Student</span></button><button class="zoom chip" data-i="img/sheets/chicken.jpg" aria-label="Character sheet: The Chicken"><img loading="lazy" src="img/sheets/t/chicken.jpg" alt=""><span>The Chicken</span></button></div>
+    <button class="tpplay" data-t="507"><span>&#9654;</span> Watch sketch 06 · 1:16</button>
+  </div>
+</article></div>
   </div>
 </section>
 
@@ -780,7 +916,7 @@ a{color:var(--amb)}
         <div class="micro handle">@shepl</div>
       </div>
     </div>
-    <div class="foot micro"><span>Case study 03 of a series</span><span>Noor and the Atheist Professor · 2025</span><span>Cover key art and character sheets made for this case study, 2026</span><span>© All Rights Reserved</span></div>
+    <div class="foot micro"><span>Case study 03 of a series</span><span>Noor and the Atheist Professor · 2025</span><span>Cover, sketch posters and character sheets made for this case study, 2026</span><span>© All Rights Reserved</span></div>
   </div>
 </footer>
 
@@ -800,8 +936,8 @@ a{color:var(--amb)}
   document.querySelectorAll('button.zoom[data-i]').forEach(function(b){
     b.addEventListener('click',function(){ open(b.dataset.i,b.getAttribute('aria-label')); });
   });
-  var ep=document.getElementById('episode'), chs=[].slice.call(document.querySelectorAll('#chs .ch'));
-  chs.forEach(function(b){
+  var ep=document.getElementById('episode'), chs=[].slice.call(document.querySelectorAll('#chs .ch')), plays=[].slice.call(document.querySelectorAll('.tpplay'));
+  chs.concat(plays).forEach(function(b){
     b.addEventListener('click',function(){
       if(!ep) return;
       var t=parseFloat(b.dataset.t);
