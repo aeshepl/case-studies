@@ -286,7 +286,11 @@ button.zoom img{transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .4s ea
 /* print (the PDF): the lookbook becomes a still grid */
 @media print{
   .look{display:none}
-  .look-print{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .look-print{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 28px}
+  .look-print figcaption{font-size:11px}
+  .ed{grid-template-columns:repeat(3,1fr);gap:16px}
+  .ed .w2{grid-column:span 1;grid-row:auto}
+  .shots{grid-template-columns:repeat(5,1fr)}
   .look-print img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--rule)}
   .look-print figcaption{margin-top:8px}
 }
